@@ -25,7 +25,7 @@ function fetchCountries(searchQuery) {
         PNotify.notice({
           text: 'Too many matches found. Please enter a more specific query!',
         });
-      } else if (data.length > 2 && data.length < 10) {
+      } else if (data.length >= 2 && data.length <= 10) {
         const countriesList = countriesListTpl(data);
         countriesContainer.insertAdjacentHTML('beforeend', countriesList);
       } else if (data.length === 1) {
